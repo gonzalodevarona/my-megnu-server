@@ -1,5 +1,4 @@
 require('dotenv').config();
-import express from 'express';
 import jwt from 'jsonwebtoken';
 
 export default (req : any, res : any, next : any)  => {
