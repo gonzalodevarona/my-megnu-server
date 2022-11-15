@@ -1,0 +1,13 @@
+POST http://localhost:3000/api/register
+Content-Type: application/json
+
+{
+    "name":"gonza",
+    "lastName":"gonza",
+    "contactNumber": 3127061833,
+    "restaurantName":"Caramba",
+    "restaurantType":"Restaurant",
+    "email":"gavo@hotmail.com",
+    "password":"puta"
+}
+
