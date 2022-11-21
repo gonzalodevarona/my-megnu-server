@@ -19,6 +19,15 @@ class RestaurantAdminService {
         throw new Error(e);
       }
     }
+
+    async findRestaurantAdminById(id: string) {
+      try {
+        const user = await RestaurantAdmin.findOne({ _id: id });
+        return user;
+      } catch (e: any) {
+        throw new Error(e);
+      }
+    }
 }
 
 export default new RestaurantAdminService();

@@ -8,7 +8,7 @@ Content-Type: application/json
     "restaurantName":"Caramba",
     "restaurantType":"Restaurant",
     "email":"gavo@hotmail.com",
-    "password":"puta"
+    "password":"prueba"
 }
 
 ####
@@ -26,4 +26,14 @@ Content-Type: application/json
 POST http://localhost:3000/api/checkAuth
 Authorization: Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzJmYzczM2UzMzkxNzlmNjc3YTQxOCIsInJlc3RhdXJhbnROYW1lIjoiQ2FyYW1iYSIsImlhdCI6MTY2ODUzMDU2OSwiZXhwIjoxNjY4NTM0MTY5fQ.kCK8kBETR1a0ouIa--NrvR-DmuR65XF8ZOXieUMzI6g 
 
+###
+
+POST http://localhost:3000/api/menu/add
+Content-Type: application/json
+Authorization: Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzJmYzczM2UzMzkxNzlmNjc3YTQxOCIsInJlc3RhdXJhbnROYW1lIjoiQ2FyYW1iYSIsImlhdCI6MTY2OTAwNjkyNSwiZXhwIjoxNjY5MDEwNTI1fQ.Dp_OGxIZCjz9CrRBPCvYscnk2l6EWdW5xZAHJuEf90o
+
+{
+    "name":"Menu principal",
+    "restaurantAdminId":"6372fc733e339179f677a418"
+}
 

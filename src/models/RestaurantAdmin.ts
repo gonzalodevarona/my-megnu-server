@@ -18,6 +18,10 @@ const restaurantAdminSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    nit: {
+        type: String,
+        required: true
+    },
     restaurantType: {
         type: String,
         required: true
