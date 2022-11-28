@@ -6,9 +6,13 @@ Content-Type: application/json
     "lastName":"gonza",
     "contactNumber": 3127061833,
     "restaurantName":"Caramba",
+    "nit": "123", 
     "restaurantType":"Restaurant",
     "email":"gavo@hotmail.com",
-    "password":"prueba"
+    "password":"prueba",
+    "menu": {
+        "name": "exquisito"
+    }
 }
 
 ####
@@ -18,22 +22,24 @@ Content-Type: application/json
 
 {
     "email":"gavo@hotmail.com",
-    "password":"puta"
+    "password":"prueba"
 }
 
 ####
 
 POST http://localhost:3000/api/checkAuth
-Authorization: Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzJmYzczM2UzMzkxNzlmNjc3YTQxOCIsInJlc3RhdXJhbnROYW1lIjoiQ2FyYW1iYSIsImlhdCI6MTY2ODUzMDU2OSwiZXhwIjoxNjY4NTM0MTY5fQ.kCK8kBETR1a0ouIa--NrvR-DmuR65XF8ZOXieUMzI6g 
+Authorization: Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzJmYzczM2UzMzkxNzlmNjc3YTQxOCIsInJlc3RhdXJhbnROYW1lIjoiQ2FyYW1iYSIsImlhdCI6MTY2OTYwMjUyMywiZXhwIjoxNjY5NjA2MTIzfQ.VGSr-IGviwwc9QgoOLueEnUyEjEZxm91jVKV-Meq_5k
 
 ###
 
-POST http://localhost:3000/api/menu/add
+PUT http://localhost:3000/api/admin
 Content-Type: application/json
-Authorization: Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzJmYzczM2UzMzkxNzlmNjc3YTQxOCIsInJlc3RhdXJhbnROYW1lIjoiQ2FyYW1iYSIsImlhdCI6MTY2OTAwNjkyNSwiZXhwIjoxNjY5MDEwNTI1fQ.Dp_OGxIZCjz9CrRBPCvYscnk2l6EWdW5xZAHJuEf90o
+Authorization: Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzJmYzczM2UzMzkxNzlmNjc3YTQxOCIsInJlc3RhdXJhbnROYW1lIjoiQ2FyYW1iYSIsImlhdCI6MTY2OTYxMTU0MywiZXhwIjoxNjY5NjE1MTQzfQ.7Xnf8LDvdEWcroM00i0Rne8NPp8KWu7qCdTuCpuimk8
 
 {
-    "name":"Menu principal",
-    "restaurantAdminId":"6372fc733e339179f677a418"
+    "id":"6384439993f5179e4e173e46",
+    "restaurantAdmin":{
+        "name": "Bustamante"
+    }
 }
 

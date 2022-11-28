@@ -1,31 +1,13 @@
 import { Request, Response } from "express";
 import RestaurantAdminService from "../services/RestaurantAdmin.service";
 import jwt from 'jsonwebtoken';
-import {encrypt, comparePassword} from "../utils/encrypt";
+import {comparePassword} from "../utils/encrypt";
 
 
 
 class LoginController {
 
 
-
-    async createUserHandler(req: Request, res: Response) {
-      try {
-        const userExist = await RestaurantAdminService.findRestaurantAdminByEmail(req.body.email);
-        if (userExist !== null) {
-          return res.status(409).send("user exist");
-        }
-
-        req.body.password = await encrypt(req.body.password)
-
-        const user = await RestaurantAdminService.createRestaurantAdmin(req.body);
-        return res.send(user);
-      } catch (e: any) {
-        console.log(e)
-
-        return res.status(409).send(e.message);
-      }
-    }
 
     async login (req: Request, res: Response) {
       const { body } = req;

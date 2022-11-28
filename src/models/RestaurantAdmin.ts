@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import Menu from './Menu';
 
 
 const restaurantAdminSchema = new mongoose.Schema({
@@ -33,6 +34,9 @@ const restaurantAdminSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true
+    },
+    menu: {
+        type: Menu.schema
     }
 })
 

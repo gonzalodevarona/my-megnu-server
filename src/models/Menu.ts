@@ -6,9 +6,8 @@ const menuSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    restaurantAdminId: {
-        type: String,
-        required: true
+    categoriesId: {
+        type: [String]
     }
 })
 

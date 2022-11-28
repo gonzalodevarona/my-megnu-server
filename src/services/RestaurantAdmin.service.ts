@@ -13,8 +13,8 @@ class RestaurantAdminService {
 
     async findRestaurantAdminByEmail(email: string) {
       try {
-        const user = await RestaurantAdmin.findOne({ email: email });
-        return user;
+        const restaurantAdmin = await RestaurantAdmin.findOne({ email: email });
+        return restaurantAdmin;
       } catch (e: any) {
         throw new Error(e);
       }
@@ -22,12 +22,33 @@ class RestaurantAdminService {
 
     async findRestaurantAdminById(id: string) {
       try {
-        const user = await RestaurantAdmin.findOne({ _id: id });
-        return user;
+        const restaurantAdmin = await RestaurantAdmin.findOne({ _id: id });
+        return restaurantAdmin;
       } catch (e: any) {
         throw new Error(e);
       }
     }
+
+    async updateRestaurantAdmin(id: string, input: typeof RestaurantAdmin) {
+      try {
+        const restaurantAdmin = await RestaurantAdmin.findOneAndUpdate({ _id: id }, input, {
+          new: true,
+        });
+        return restaurantAdmin?.toJSON();
+      } catch (e: any) {
+        throw new Error(e);
+      }
+    }
+
+    async deleteRestaurantAdmin(id: string) {
+      try {
+        const restaurantAdmin = await RestaurantAdmin.deleteOne({ _id: id });
+        return restaurantAdmin;
+      } catch (e: any) {
+        throw new Error(e);
+      }
+    }
+
 }
 
 export default new RestaurantAdminService();

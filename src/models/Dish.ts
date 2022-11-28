@@ -17,10 +17,6 @@ const dishSchema = new mongoose.Schema({
     price: {
         type: Number,
         required: true
-    },
-    categoryId: {
-        type: String,
-        required: true
     }
 })
 
