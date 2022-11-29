@@ -57,6 +57,26 @@ class CategoryService {
       }
     }
 
+    async addDishToCategory(categoryId : string, dish :  Dish) {
+      try {
+
+        const category = await Category.findOne({ _id: categoryId });
+        //category.menu.push(dish);
+        console.log(dish);
+
+        if (category != null){
+          return await RestaurantAdminService.getMenuCategoriesByAdminId(category.menu.toString());
+        } else {
+          return null;
+        }
+        
+    
+        
+      } catch (e: any) {
+        throw new Error(e);
+      }
+    }
+
 
 
 

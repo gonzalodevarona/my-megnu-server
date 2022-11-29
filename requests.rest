@@ -53,6 +53,7 @@ Authorization: Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzJmYzcz
 
 
 // Category ENDPOINTS
+
 ###
 POST http://localhost:3000/api/menu/category
 Content-Type: application/json
@@ -86,4 +87,5 @@ Authorization: Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzJmYzcz
     "categoryId":"63859143a5f850b66afb243e"
 }
 
+// Dish ENDPOINTS
 
