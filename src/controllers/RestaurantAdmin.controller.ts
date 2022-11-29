@@ -65,12 +65,13 @@ class RestaurantAdminController {
 
     async getRestaurantAdminCategoriesById(req: Request, res: Response) {
       try {
-          const restaurantAdminExist = await RestaurantAdminService.findRestaurantAdminById(req.body.restaurantAdminId);
+
+          const restaurantAdminExist = await RestaurantAdminService.findRestaurantAdminById(req.params.restaurantAdminId);
           if (restaurantAdminExist == null) {
               return res.status(409).send("Restaurant Admin does not exist");
           }
           
-          const menu = await RestaurantAdminService.getMenuCategoriesByAdminId(req.body.restaurantAdminId);
+          const menu = await RestaurantAdminService.getMenuCategoriesByAdminId(req.params.restaurantAdminId);
 
           return res.send(menu);
       } catch (e: any) {
