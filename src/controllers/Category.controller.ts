@@ -8,6 +8,8 @@ class CategoryController {
   async createCategory(req: Request, res: Response) {
     try {
 
+      req.body.category.menu = req.body.restaurantAdminId;
+
       const category = await CategoryService.createCategory(req.body.restaurantAdminId, req.body.category);
       if (category == null) {
         return res.status(409).send("category could not be created");
@@ -16,6 +18,21 @@ class CategoryController {
       return res.send(category);
     } catch (e: any) {
       console.log(e)
+
+      return res.status(409).send(e.message);
+    }
+  }
+
+  async getCategory(req: Request, res: Response) {
+    try {
+      const category = await CategoryService.findCategoryById(req.body.categoryId);
+
+      if (category == null) {
+        return res.status(409).send("category could not be found");
+      }
+
+      return res.send(category);
+    } catch (e: any) {
 
       return res.status(409).send(e.message);
     }

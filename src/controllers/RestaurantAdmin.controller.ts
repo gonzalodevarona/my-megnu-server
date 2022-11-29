@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import RestaurantAdminService from "../services/RestaurantAdmin.service";
+import loginController from "./login.controller";
 import { encrypt } from "../utils/encrypt";
 
 
@@ -17,6 +18,8 @@ class RestaurantAdminController {
           req.body.password = await encrypt(req.body.password)
   
           const user = await RestaurantAdminService.createRestaurantAdmin(req.body);
+
+          loginController.login(req, res);
           return res.send(user);
         } catch (e: any) {
           console.log(e)

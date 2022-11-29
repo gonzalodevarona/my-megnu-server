@@ -26,6 +26,15 @@ class CategoryService {
         }
     }
 
+    async findCategoryById(id: string) {
+      try {
+        const category = await Category.findOne({ _id: id });
+        return category;
+      } catch (e: any) {
+        throw new Error(e);
+      }
+    }
+
     async deleteCategory(idRestaurantAdmin : string, idCategory :  string) {
       try {
 
