@@ -28,11 +28,7 @@ class DishService {
         category?.dishes.push(dish);
         category?.save();
 
-        if (category != null){
-          return await RestaurantAdminService.getMenuCategoriesByAdminId(category.menu.toString());
-        } else {
-          return null;
-        }
+        return await Category.findOne({ _id: categoryId });
         
     
         
@@ -40,6 +36,28 @@ class DishService {
         throw new Error(e);
       }
     }
+
+    // async updateDish(categoryId : string, dishId : string, dish :  typeof Dish) {
+    //     try {
+    //       let this.getDishById(categoryId, dishId);
+
+    //       const category = await Category.findOne({ _id: categoryId });
+          
+    //       category?.dishes.push(dish);
+    //       category?.save();
+  
+    //       if (category != null){
+    //         return await RestaurantAdminService.getMenuCategoriesByAdminId(category.menu.toString());
+    //       } else {
+    //         return null;
+    //       }
+          
+      
+          
+    //     } catch (e: any) {
+    //       throw new Error(e);
+    //     }
+    //   }
 
     async deleteDishFromCategory(categoryId : string, dishId :  string) {
         try {
@@ -49,11 +67,7 @@ class DishService {
           category?.dishes.pull(dishId);
           category?.save();
   
-          if (category != null){
-            return await RestaurantAdminService.getMenuCategoriesByAdminId(category.menu.toString());
-          } else {
-            return null;
-          }
+          return await Category.findOne({ _id: categoryId });
           
       
           
