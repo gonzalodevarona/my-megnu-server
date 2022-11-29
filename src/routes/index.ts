@@ -1,6 +1,7 @@
 import { Express } from "express";
 import loginController from "../controllers/login.controller";
 import restaurantAdminController from "../controllers/RestaurantAdmin.controller";
+import categoryController from "../controllers/Category.controller";
 import auth from "../middleware/auth";
 
 function  routes(app: Express) {
@@ -13,6 +14,10 @@ function  routes(app: Express) {
     app.get("/api/admin", restaurantAdminController.getRestaurantAdmin);
     app.put("/api/admin", restaurantAdminController.updateRestaurantAdmin);
     app.delete("/api/admin", restaurantAdminController.deleteRestaurantAdmin);
+
+    // add category to menu
+    app.post("/api/menu/category", categoryController.createCategory);
+    app.delete("/api/menu/category", categoryController.deleteCategory);
 
     // menu routes
     //app.post("/api/menu/add", menuController.createMenu);

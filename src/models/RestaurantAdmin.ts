@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
-import Menu from './Menu';
+
+const Schema = mongoose.Schema;
 
 
 const restaurantAdminSchema = new mongoose.Schema({
@@ -35,9 +36,10 @@ const restaurantAdminSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    menu: {
-        type: Menu.schema
-    }
+    menu: [{
+        type: Schema.Types.ObjectId,
+        ref: "Category"
+    }]
 })
 
 const RestaurantAdmin = mongoose.model('RestaurantAdmin', restaurantAdminSchema)

@@ -1,6 +1,8 @@
 import mongoose from 'mongoose';
 import Dish from './Dish';
 
+const Schema = mongoose.Schema;
+
 const categorySchema = new mongoose.Schema({
     name: {
         type: String,
@@ -10,8 +12,9 @@ const categorySchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    menuId: {
-        type: String,
+    menu: {
+        type: Schema.Types.ObjectId,
+        ref: "RestaurantAdminId",
         required: true
     },
     dishes:{
@@ -19,7 +22,7 @@ const categorySchema = new mongoose.Schema({
     }
 })
 
-const Category = mongoose.model('Menu', categorySchema)
+const Category = mongoose.model('Category', categorySchema)
 
 export default Category;
 

@@ -27,7 +27,7 @@ class RestaurantAdminController {
 
     async updateRestaurantAdmin(req: Request, res: Response) {
         try {
-          const restaurantAdminExist = await RestaurantAdminService.findRestaurantAdminById(req.body.id);
+          const restaurantAdminExist = await RestaurantAdminService.findRestaurantAdminById(req.body.restaurantAdminId);
           if (restaurantAdminExist == null) {
             return res.status(409).send("Restaurant Admin does not exist");
           }
@@ -36,7 +36,7 @@ class RestaurantAdminController {
             req.body.password = await encrypt(req.body.password);
           }
     
-          const user = await RestaurantAdminService.updateRestaurantAdmin(req.body.id, req.body.restaurantAdmin);
+          const user = await RestaurantAdminService.updateRestaurantAdmin(req.body.restaurantAdminId, req.body.restaurantAdmin);
           return res.send(user);
         } catch (e: any) {
           
@@ -46,7 +46,7 @@ class RestaurantAdminController {
 
     async getRestaurantAdmin(req: Request, res: Response) {
         try {
-            const restaurantAdminExist = await RestaurantAdminService.findRestaurantAdminById(req.body.id);
+            const restaurantAdminExist = await RestaurantAdminService.findRestaurantAdminById(req.body.restaurantAdminId);
             if (restaurantAdminExist == null) {
                 return res.status(409).send("Restaurant Admin does not exist");
             }
@@ -61,11 +61,11 @@ class RestaurantAdminController {
 
     async deleteRestaurantAdmin(req: Request, res: Response) {
       try {
-        const restaurantAdminExist = await RestaurantAdminService.findRestaurantAdminById(req.body.id);
+        const restaurantAdminExist = await RestaurantAdminService.findRestaurantAdminById(req.body.restaurantAdminId);
         if (restaurantAdminExist == null) {
           return res.status(409).send("Restaurant Admin does not exist");
         }
-        let restaurantAdmin = await RestaurantAdminService.deleteRestaurantAdmin(req.body.id);
+        let restaurantAdmin = await RestaurantAdminService.deleteRestaurantAdmin(req.body.restaurantAdminId);
         return res.send(restaurantAdmin);
       } catch (e: any) {
   
