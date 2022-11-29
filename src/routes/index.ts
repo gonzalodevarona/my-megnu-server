@@ -15,7 +15,8 @@ function  routes(app: Express) {
     app.put("/api/admin", restaurantAdminController.updateRestaurantAdmin);
     app.delete("/api/admin", restaurantAdminController.deleteRestaurantAdmin);
 
-    // add category to menu
+    // menu categories
+    app.get("/api/menu/category", categoryController.getCategoryById); 
     app.post("/api/menu/category", categoryController.createCategory);
     app.delete("/api/menu/category", categoryController.deleteCategory);
 

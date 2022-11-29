@@ -2,13 +2,13 @@ POST http://localhost:3000/api/register
 Content-Type: application/json
 
 {
-    "name":"gonza",
-    "lastName":"gonza",
-    "contactNumber": 3127061833,
-    "restaurantName":"Caramba",
-    "nit": "123", 
+    "name":"busta",
+    "lastName":"busta",
+    "contactNumber": 3127061823,
+    "restaurantName":"Chuzos de yumbo",
+    "nit": "1234", 
     "restaurantType":"Restaurant",
-    "email":"gavo@hotmail.com",
+    "email":"busta@hotmail.com",
     "password":"prueba",
     "menu": []
     
@@ -51,8 +51,7 @@ Authorization: Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzJmYzcz
     "restaurantAdminId":"63856b4623d5312f6e2c04a7",
     "category":{
         "name": "Bustamante",
-        "bannerImg": "Bustamante",
-        "menu": "63856b4623d5312f6e2c04a7"
+        "bannerImg": "Bustamante"
 
     }
 }
@@ -65,6 +64,15 @@ Authorization: Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzJmYzcz
 {
     "restaurantAdminId":"63856b4623d5312f6e2c04a7",
     "categoryId": "638576a811542e249494e53f"
+}
+
+###
+GET http://localhost:3000/api/menu/category
+Content-Type: application/json
+Authorization: Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzJmYzczM2UzMzkxNzlmNjc3YTQxOCIsInJlc3RhdXJhbnROYW1lIjoiQ2FyYW1iYSIsImlhdCI6MTY2OTYxMTU0MywiZXhwIjoxNjY5NjE1MTQzfQ.7Xnf8LDvdEWcroM00i0Rne8NPp8KWu7qCdTuCpuimk8
+
+{
+    "categoryId":"63859143a5f850b66afb243e"
 }
 
 

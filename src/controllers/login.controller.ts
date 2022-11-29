@@ -1,7 +1,5 @@
 import { Request, Response } from "express";
-import RestaurantAdminService from "../services/RestaurantAdmin.service";
-import jwt from 'jsonwebtoken';
-import {comparePassword} from "../utils/encrypt";
+import LoginService from "../services/Login.service";
 
 
 
@@ -13,41 +11,13 @@ class LoginController {
       const { body } = req;
       const { email, password } = body;
 
-      const user = await RestaurantAdminService.findRestaurantAdminByEmail( email )
-      
+      const response = await LoginService.login(email, password);
 
-      let passwordCorrect = false;
-      
-      if(user !== null){
-        passwordCorrect = await comparePassword(password, user.password);
-      }      
-
-      if (!(user && passwordCorrect)) {
+      if(response == null){
         return res.status(401).json({ error: 'invalid user or password' });
+      } else {
+        return res.status(200).send(response);
       }
-
-
-      const userForToken = {
-        id: user._id,
-        restaurantName: user.restaurantName
-      }
-    
-      const token = jwt.sign(
-        userForToken,
-        process.env.SECRET_TOKEN as jwt.Secret,
-        {
-          expiresIn: 60 * 60  // Expira en una hora
-        }
-      )
-    
-      return res.status(200).send({
-        id: user._id,
-        name: user.name,
-        lastName: user.name,
-        restaurantName: user.restaurantName,
-        token
-      })
-
 
 
     }

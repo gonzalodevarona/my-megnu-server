@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import RestaurantAdminService from "../services/RestaurantAdmin.service";
-import loginController from "./login.controller";
 import { encrypt } from "../utils/encrypt";
+import LoginService from "../services/Login.service";
 
 
 
@@ -14,12 +14,14 @@ class RestaurantAdminController {
           if (userExist !== null) {
             return res.status(409).send("Restaurant Admin exist");
           }
-  
-          req.body.password = await encrypt(req.body.password)
-  
-          const user = await RestaurantAdminService.createRestaurantAdmin(req.body);
+          const ogPassword = req.body.password;
 
-          loginController.login(req, res);
+          req.body.password = await encrypt(req.body.password)
+          
+          await RestaurantAdminService.createRestaurantAdmin(req.body);
+
+          const user = await LoginService.login(req.body.email, ogPassword);
+          
           return res.send(user);
         } catch (e: any) {
           console.log(e)

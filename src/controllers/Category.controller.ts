@@ -23,7 +23,7 @@ class CategoryController {
     }
   }
 
-  async getCategory(req: Request, res: Response) {
+  async getCategoryById(req: Request, res: Response) {
     try {
       const category = await CategoryService.findCategoryById(req.body.categoryId);
 
