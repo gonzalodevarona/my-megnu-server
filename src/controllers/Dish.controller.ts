@@ -38,6 +38,22 @@ class DishController {
         }
     }
 
+    async updateDish(req: Request, res: Response) {
+      try {
+        const dish = await DishService.updateDish(req.body.categoryId, req.body.dishId, req.body.dish);
+        
+        if(dish == null){
+            return res.status(409).send("el plato no fue editado");
+        } else{
+            return res.status(200).send(dish);
+        }
+        
+      } catch (e: any) {
+  
+        return res.status(409).send(e.message);
+      }
+  }
+
     async deleteDishFromCategory(req: Request, res: Response) {
         try {
           const categoriesUpdated = await DishService.deleteDishFromCategory(req.body.categoryId, req.body.dishId);

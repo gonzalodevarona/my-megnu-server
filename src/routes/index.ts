@@ -19,17 +19,15 @@ function  routes(app: Express) {
 
     // menu categories
     app.get("/api/menu/category", categoryController.getCategoryById); 
-    app.get("/api/menu/category/dishes", dishController.addDishToCategory); //todo
     app.post("/api/menu/category", categoryController.createCategory);
     app.delete("/api/menu/category", categoryController.deleteCategory);
 
     // menu category dishes
     app.get("/api/menu/category/dish", dishController.getDishById);
+    app.put("/api/menu/category/dish", dishController.updateDish);
     app.post("/api/menu/category/dish", dishController.addDishToCategory);
     app.delete("/api/menu/category/dish", dishController.deleteDishFromCategory);
 
-    // menu routes
-    //app.post("/api/menu/add", menuController.createMenu);
 
     // this route must be erased, it was made for testing purposes
     app.post("/api/checkAuth", auth, (req, _res) => {
