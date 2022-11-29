@@ -49,6 +49,15 @@ class RestaurantAdminService {
       }
     }
 
+    async getMenuCategoriesByAdminId(id: string) {
+      try {
+        const restaurantAdmin = await RestaurantAdmin.findOne({ _id: id }).populate('menu');
+        return restaurantAdmin?.menu;
+      } catch (e: any) {
+        throw new Error(e);
+      }
+    }
+
 }
 
 export default new RestaurantAdminService();

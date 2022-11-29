@@ -41,6 +41,17 @@ Authorization: Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzJmYzcz
     }
 }
 
+###
+GET http://localhost:3000/api/admin/menu
+Content-Type: application/json
+Authorization: Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzJmYzczM2UzMzkxNzlmNjc3YTQxOCIsInJlc3RhdXJhbnROYW1lIjoiQ2FyYW1iYSIsImlhdCI6MTY2OTYxMTU0MywiZXhwIjoxNjY5NjE1MTQzfQ.7Xnf8LDvdEWcroM00i0Rne8NPp8KWu7qCdTuCpuimk8
+
+{
+    "restaurantAdminId":"63856b4623d5312f6e2c04a7"
+}
+
+
+
 // Category ENDPOINTS
 ###
 POST http://localhost:3000/api/menu/category
@@ -63,7 +74,7 @@ Authorization: Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzJmYzcz
 
 {
     "restaurantAdminId":"63856b4623d5312f6e2c04a7",
-    "categoryId": "638576a811542e249494e53f"
+    "categoryId": "63859143a5f850b66afb243e"
 }
 
 ###

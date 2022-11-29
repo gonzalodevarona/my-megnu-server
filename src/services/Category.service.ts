@@ -19,7 +19,9 @@ class CategoryService {
           foundRestaurantAdmin.menu.push(newCategory._id);
           foundRestaurantAdmin.save();
 
-          return newCategory.toJSON();
+          const categoriesUpdated = await RestaurantAdminService.getMenuCategoriesByAdminId(idRestaurantAdmin);
+
+          return categoriesUpdated;
           
         } catch (e: any) {
           throw new Error(e);
@@ -38,20 +40,24 @@ class CategoryService {
     async deleteCategory(idRestaurantAdmin : string, idCategory :  string) {
       try {
 
-        const category = await Category.deleteOne({ _id: idCategory });
+        await Category.deleteOne({ _id: idCategory });
 
         await RestaurantAdmin.findOneAndUpdate(
           { _id: idRestaurantAdmin },
           { $pull: { menu:  new ObjectId(idCategory) } },
           { new: true }
         )
+
+        const categoriesUpdated = await RestaurantAdminService.getMenuCategoriesByAdminId(idRestaurantAdmin);
       
-        return category;
+        return categoriesUpdated;
         
       } catch (e: any) {
         throw new Error(e);
       }
-  }
+    }
+
+
 
 
 }

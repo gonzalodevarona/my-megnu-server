@@ -63,6 +63,22 @@ class RestaurantAdminController {
         }
     }
 
+    async getRestaurantAdminCategoriesById(req: Request, res: Response) {
+      try {
+          const restaurantAdminExist = await RestaurantAdminService.findRestaurantAdminById(req.body.restaurantAdminId);
+          if (restaurantAdminExist == null) {
+              return res.status(409).send("Restaurant Admin does not exist");
+          }
+          
+          const menu = await RestaurantAdminService.getMenuCategoriesByAdminId(req.body.restaurantAdminId);
+
+          return res.send(menu);
+      } catch (e: any) {
+
+          return res.status(409).send(e.message);
+      }
+  }
+
 
     async deleteRestaurantAdmin(req: Request, res: Response) {
       try {
