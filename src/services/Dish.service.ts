@@ -36,23 +36,27 @@ class DishService {
     }
 
     async updateDish(categoryId : string, dishId : string, dish :  typeof Dish) {
-        try {
+      try {
+      
 
-          return await Category.findOneAndUpdate(
-            { "_id": categoryId, "dishes._id": dishId },
-            { 
-                "$set": {
-                    "dishes.$": dish
-                }
-            });
+        const aux = await Category.findOneAndUpdate(
+          { "_id":  categoryId, "dishes._id": dishId },
+          { 
+              "$set": {
+                  "dishes.$": dish
+              }
+          },
+          {returnNewDocument : true});
 
-           
-                
-          
-        } catch (e: any) {
-          throw new Error(e);
-        }
+          return aux;
+
+         
+              
+        
+      } catch (e: any) {
+        throw new Error(e);
       }
+    }
 
     async deleteDishFromCategory(categoryId : string, dishId :  string) {
         try {

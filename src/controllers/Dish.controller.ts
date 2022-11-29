@@ -43,7 +43,7 @@ class DishController {
         const dish = await DishService.updateDish(req.body.categoryId, req.body.dishId, req.body.dish);
         
         if(dish == null){
-            return res.status(409).send("el plato no fue editado");
+            return res.status(200).send("no hay cambios para aplicar al plato");
         } else{
             return res.status(200).send(dish);
         }

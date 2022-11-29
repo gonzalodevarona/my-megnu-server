@@ -45,7 +45,7 @@ Authorization: Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzJmYzcz
 
 
 ###
-GET http://localhost:3000/api/menu/63856b4623d5312f6e2c04a7
+GET http://localhost:3000/api/menu/63865a7060ac43fc54f780f5
 Content-Type: application/json
 Authorization: Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzJmYzczM2UzMzkxNzlmNjc3YTQxOCIsInJlc3RhdXJhbnROYW1lIjoiQ2FyYW1iYSIsImlhdCI6MTY2OTYxMTU0MywiZXhwIjoxNjY5NjE1MTQzfQ.7Xnf8LDvdEWcroM00i0Rne8NPp8KWu7qCdTuCpuimk8
 
@@ -84,7 +84,7 @@ Content-Type: application/json
 Authorization: Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzJmYzczM2UzMzkxNzlmNjc3YTQxOCIsInJlc3RhdXJhbnROYW1lIjoiQ2FyYW1iYSIsImlhdCI6MTY2OTYxMTU0MywiZXhwIjoxNjY5NjE1MTQzfQ.7Xnf8LDvdEWcroM00i0Rne8NPp8KWu7qCdTuCpuimk8
 
 {
-    "categoryId":"63859143a5f850b66afb243e"
+    "categoryId":"63865bc560ac43fc54f780fe"
 }
 
 // Dish ENDPOINTS
@@ -95,8 +95,8 @@ Content-Type: application/json
 Authorization: Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzJmYzczM2UzMzkxNzlmNjc3YTQxOCIsInJlc3RhdXJhbnROYW1lIjoiQ2FyYW1iYSIsImlhdCI6MTY2OTYxMTU0MywiZXhwIjoxNjY5NjE1MTQzfQ.7Xnf8LDvdEWcroM00i0Rne8NPp8KWu7qCdTuCpuimk8
 
 {
-    "categoryId":"6385925245f83736bde8b1fe",
-    "dishId": "63863cd39b2591e1d460e75d"
+    "categoryId":"63865bc560ac43fc54f780fe",
+    "dishId": "63865d9e60ac43fc54f7810e"
 }
 
 ###
@@ -133,12 +133,12 @@ Authorization: Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzJmYzcz
 
 {
     "categoryId":"6385925245f83736bde8b1fe",
-    "dishId": "63864e6b7365f01a60a9db92",
+    "dishId": "638666734807b96310acac4a",
     "dish":{
-        "name": "GONZA a la plancha",
-        "description": "gonza",
+        "name": "sopa",
+        "description": "sopita",
         "dishImg": "ok",
-        "price": 5
+        "price": 56
     }
 }
 
