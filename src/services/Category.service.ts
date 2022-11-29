@@ -16,21 +16,21 @@ class CategoryService {
 
           const newCategory = await Category.create(input);
           
-          foundRestaurantAdmin.menu.push(newCategory._id);
-          foundRestaurantAdmin.save();
+          await foundRestaurantAdmin.menu.push(newCategory._id);
+          return foundRestaurantAdmin.save();
 
-          const categoriesUpdated = await RestaurantAdminService.getMenuCategoriesByAdminId(idRestaurantAdmin);
+          // const categoriesUpdated = await RestaurantAdminService.getMenuCategoriesByAdminId(idRestaurantAdmin);
 
-          return categoriesUpdated;
+          // return categoriesUpdated;
           
         } catch (e: any) {
           throw new Error(e);
         }
     }
 
-    async findCategoryById(id: string) {
+    async findCategoryById(idCategory: string) {
       try {
-        const category = await Category.findOne({ _id: id });
+        const category = await Category.findOne({ _id: idCategory });
         return category;
       } catch (e: any) {
         throw new Error(e);
@@ -42,15 +42,15 @@ class CategoryService {
 
         await Category.deleteOne({ _id: idCategory });
 
-        await RestaurantAdmin.findOneAndUpdate(
+        return await RestaurantAdmin.findOneAndUpdate(
           { _id: idRestaurantAdmin },
           { $pull: { menu:  new ObjectId(idCategory) } },
           { new: true }
         )
 
-        const categoriesUpdated = await RestaurantAdminService.getMenuCategoriesByAdminId(idRestaurantAdmin);
+        // const categoriesUpdated = await RestaurantAdminService.getMenuCategoriesByAdminId(idRestaurantAdmin);
       
-        return categoriesUpdated;
+        // return categoriesUpdated;
         
       } catch (e: any) {
         throw new Error(e);

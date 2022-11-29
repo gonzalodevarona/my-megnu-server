@@ -2,17 +2,19 @@ POST http://localhost:3000/api/register
 Content-Type: application/json
 
 {
-    "name":"busta",
-    "lastName":"busta",
+    "name":"Gonzalo",
+    "lastName":"De Varona",
     "contactNumber": 3127061823,
-    "restaurantName":"Chuzos de yumbo",
+    "restaurantName":"Odiseo",
     "nit": "1234", 
     "restaurantType":"Restaurant",
-    "email":"busta@hotmail.com",
+    "email":"gavo24@hotmail.com",
     "password":"prueba",
     "menu": []
     
 }
+
+// eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODY1YTcwNjBhYzQzZmM1NGY3ODBmNSIsInJlc3RhdXJhbnROYW1lIjoiT2Rpc2VvIiwiaWF0IjoxNjY5NzQ5MzYwLCJleHAiOjE2Njk3NTI5NjB9.-eR1YNuZolg23NFQjWMNkwc6dQ2X1rMa3PQxkYwrsys
 ####
 
 POST http://localhost:3000/api/login
@@ -41,14 +43,12 @@ Authorization: Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzJmYzcz
     }
 }
 
+
 ###
-GET http://localhost:3000/api/admin/menu
+GET http://localhost:3000/api/menu/63856b4623d5312f6e2c04a7
 Content-Type: application/json
 Authorization: Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzJmYzczM2UzMzkxNzlmNjc3YTQxOCIsInJlc3RhdXJhbnROYW1lIjoiQ2FyYW1iYSIsImlhdCI6MTY2OTYxMTU0MywiZXhwIjoxNjY5NjE1MTQzfQ.7Xnf8LDvdEWcroM00i0Rne8NPp8KWu7qCdTuCpuimk8
 
-{
-    "restaurantAdminId":"63856b4623d5312f6e2c04a7"
-}
 
 
 
@@ -60,10 +60,10 @@ Content-Type: application/json
 Authorization: Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzJmYzczM2UzMzkxNzlmNjc3YTQxOCIsInJlc3RhdXJhbnROYW1lIjoiQ2FyYW1iYSIsImlhdCI6MTY2OTYxMTU0MywiZXhwIjoxNjY5NjE1MTQzfQ.7Xnf8LDvdEWcroM00i0Rne8NPp8KWu7qCdTuCpuimk8
 
 {
-    "restaurantAdminId":"63856b4623d5312f6e2c04a7",
+    "restaurantAdminId":"63865a7060ac43fc54f780f5",
     "category":{
-        "name": "Bustamante",
-        "bannerImg": "Bustamante"
+        "name": "Carnes",
+        "bannerImg": "https://elmiradordeatienza.com/imagenes/el-mirador-de-atienza-restaurante-lomitos-de-corzo-carta-1600px.jpg'"
 
     }
 }
@@ -74,8 +74,8 @@ Content-Type: application/json
 Authorization: Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzJmYzczM2UzMzkxNzlmNjc3YTQxOCIsInJlc3RhdXJhbnROYW1lIjoiQ2FyYW1iYSIsImlhdCI6MTY2OTYxMTU0MywiZXhwIjoxNjY5NjE1MTQzfQ.7Xnf8LDvdEWcroM00i0Rne8NPp8KWu7qCdTuCpuimk8
 
 {
-    "restaurantAdminId":"63856b4623d5312f6e2c04a7",
-    "categoryId": "63859143a5f850b66afb243e"
+    "restaurantAdminId":"63865a7060ac43fc54f780f5",
+    "categoryId": "63865b4460ac43fc54f780f9"
 }
 
 ###
@@ -105,12 +105,12 @@ Content-Type: application/json
 Authorization: Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzJmYzczM2UzMzkxNzlmNjc3YTQxOCIsInJlc3RhdXJhbnROYW1lIjoiQ2FyYW1iYSIsImlhdCI6MTY2OTYxMTU0MywiZXhwIjoxNjY5NjE1MTQzfQ.7Xnf8LDvdEWcroM00i0Rne8NPp8KWu7qCdTuCpuimk8
 
 {
-    "categoryId":"6385925245f83736bde8b1fe",
+    "categoryId":"63865bf260ac43fc54f78104",
     "dish":{
-        "name": "busta a la plancha",
-        "description": "busta",
-        "dishImg": "ok",
-        "price": 5
+        "name": "Morrillo",
+        "description": "Suspendisse non tortor justo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos",
+        "dishImg": "https://static.wixstatic.com/media/d269c2_c47abafbabf243cdab2ff1eafb7f8f28~mv2.jpg/v1/fit/w_1000%2Ch_678%2Cal_c%2Cq_80/file.jpg''",
+        "price": 38
     }
 }
 
@@ -121,8 +121,8 @@ Content-Type: application/json
 Authorization: Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzJmYzczM2UzMzkxNzlmNjc3YTQxOCIsInJlc3RhdXJhbnROYW1lIjoiQ2FyYW1iYSIsImlhdCI6MTY2OTYxMTU0MywiZXhwIjoxNjY5NjE1MTQzfQ.7Xnf8LDvdEWcroM00i0Rne8NPp8KWu7qCdTuCpuimk8
 
 {
-    "categoryId":"6385925245f83736bde8b1fe",
-    "dishId": "63863cd39b2591e1d460e75d"
+    "categoryId":"63865bf260ac43fc54f78104",
+    "dishId": "63866157752c4c8f25c2d2dc"
 }
 
 ###

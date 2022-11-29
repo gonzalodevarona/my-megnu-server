@@ -25,8 +25,9 @@ class CategoryController {
 
   async getCategoryById(req: Request, res: Response) {
     try {
+      console.log("ok")
       const category = await CategoryService.findCategoryById(req.body.categoryId);
-
+      
       if (category == null) {
         return res.status(409).send("category could not be found");
       }

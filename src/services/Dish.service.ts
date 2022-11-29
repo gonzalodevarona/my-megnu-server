@@ -25,9 +25,8 @@ class DishService {
         const category = await Category.findOne({ _id: categoryId });
         
         category?.dishes.push(dish);
-        category?.save();
 
-        return await Category.findOne({ _id: categoryId });
+        return category?.save();
         
     
         
@@ -39,7 +38,7 @@ class DishService {
     async updateDish(categoryId : string, dishId : string, dish :  typeof Dish) {
         try {
 
-            await Category.findOneAndUpdate(
+          return await Category.findOneAndUpdate(
             { "_id": categoryId, "dishes._id": dishId },
             { 
                 "$set": {
@@ -47,7 +46,7 @@ class DishService {
                 }
             });
 
-            return await Category.findOne({ _id: categoryId });
+           
                 
           
         } catch (e: any) {
@@ -60,10 +59,10 @@ class DishService {
   
           const category = await Category.findOne({ _id: categoryId });
           
-          category?.dishes.pull(dishId);
-          category?.save();
+          await category?.dishes.pull(dishId);
+          return category?.save();
   
-          return await Category.findOne({ _id: categoryId });
+          
           
       
           
