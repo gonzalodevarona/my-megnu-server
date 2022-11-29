@@ -22,6 +22,38 @@ class DishController {
       }
     }
 
+    async getDishById(req: Request, res: Response) {
+        try {
+          const dish = await DishService.getDishById(req.body.categoryId, req.body.dishId);
+          
+          if(dish == null){
+              return res.status(409).send("el plato no fue encontrado");
+          } else{
+              return res.status(200).send(dish);
+          }
+          
+        } catch (e: any) {
+    
+          return res.status(409).send(e.message);
+        }
+    }
+
+    async deleteDishFromCategory(req: Request, res: Response) {
+        try {
+          const categoriesUpdated = await DishService.deleteDishFromCategory(req.body.categoryId, req.body.dishId);
+          
+          if(categoriesUpdated == null){
+              return res.status(409).send("el plato no pudo ser eliminado");
+          } else{
+              return res.status(200).send(categoriesUpdated);
+          }
+          
+        } catch (e: any) {
+    
+          return res.status(409).send(e.message);
+        }
+      }
+
 
 
     
