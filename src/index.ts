@@ -1,5 +1,6 @@
 require('dotenv').config();
 import express from 'express';
+import cors from 'cors';
 import mongoose from 'mongoose';
 import routes from './routes';
 
@@ -12,6 +13,7 @@ db.once('open', () => console.log('Connected to Database. Listening...'))
 const app = express();
 
 app.use(express.json()) //middleware que transforma la req.body a json
+app.use(cors()) //middleware que transforma la req.body a json
 
 const PORT = 3000;
 
