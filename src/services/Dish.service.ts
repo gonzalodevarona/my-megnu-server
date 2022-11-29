@@ -38,7 +38,7 @@ class DishService {
     async updateDish(categoryId : string, dishId : string, dish :  typeof Dish) {
       try {
       
-
+        
         const aux = await Category.findOneAndUpdate(
           { "_id":  categoryId, "dishes._id": dishId },
           { 
@@ -46,7 +46,7 @@ class DishService {
                   "dishes.$": dish
               }
           },
-          {returnNewDocument : true});
+          {new : true});
 
           return aux;
 

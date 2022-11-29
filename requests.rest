@@ -84,7 +84,7 @@ Content-Type: application/json
 Authorization: Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzJmYzczM2UzMzkxNzlmNjc3YTQxOCIsInJlc3RhdXJhbnROYW1lIjoiQ2FyYW1iYSIsImlhdCI6MTY2OTYxMTU0MywiZXhwIjoxNjY5NjE1MTQzfQ.7Xnf8LDvdEWcroM00i0Rne8NPp8KWu7qCdTuCpuimk8
 
 {
-    "categoryId":"63865bc560ac43fc54f780fe"
+    "categoryId":"638592c29784e00857ecd408"
 }
 
 // Dish ENDPOINTS
@@ -133,12 +133,14 @@ Authorization: Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzJmYzcz
 
 {
     "categoryId":"6385925245f83736bde8b1fe",
-    "dishId": "638666734807b96310acac4a",
+    "dishId": "63866ae3c1cc6fbbbb8485b0",
     "dish":{
-        "name": "sopa",
-        "description": "sopita",
+        "name": "melooo",
+        "description": "sopitaa",
         "dishImg": "ok",
-        "price": 56
+        "price": 5,
+        "_id": "63866ae3c1cc6fbbbb8485b0"
+        
     }
 }
 
