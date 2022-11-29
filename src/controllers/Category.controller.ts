@@ -52,17 +52,6 @@ class CategoryController {
       }
     }
 
-    async addDishToCategory(req: Request, res: Response) {
-      try {
-        const categoriesUpdated = await CategoryService.addDishToCategory(req.body.categoryId, req.body.dish);
-    
-        return res.send(categoriesUpdated);
-      } catch (e: any) {
-  
-        return res.status(409).send(e.message);
-      }
-    }
-
 
 
     

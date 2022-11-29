@@ -2,6 +2,7 @@ import { Express } from "express";
 import loginController from "../controllers/login.controller";
 import restaurantAdminController from "../controllers/RestaurantAdmin.controller";
 import categoryController from "../controllers/Category.controller";
+import dishController from "../controllers/Dish.controller";
 import auth from "../middleware/auth";
 
 function  routes(app: Express) {
@@ -20,6 +21,9 @@ function  routes(app: Express) {
     app.get("/api/menu/category", categoryController.getCategoryById); 
     app.post("/api/menu/category", categoryController.createCategory);
     app.delete("/api/menu/category", categoryController.deleteCategory);
+
+    // menu category dishes
+    app.post("/api/menu/category/dish", dishController.addDishToCategory);
 
     // menu routes
     //app.post("/api/menu/add", menuController.createMenu);

@@ -10,7 +10,7 @@ const dishSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    image: {
+    dishImg: {
         type: String,
         required: true
     },
