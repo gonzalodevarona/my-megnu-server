@@ -12,7 +12,7 @@ function  routes(app: Express) {
     app.post("/api/register", restaurantAdminController.createRestaurantAdmin);
 
     // admin routes
-    app.get("/api/menu/:restaurantAdminId", restaurantAdminController.getRestaurantAdminCategoriesById);
+    app.get("/api/menu/guest/:restaurantAdminId", restaurantAdminController.getRestaurantAdminCategoriesById);
 
     app.get("/api/admin", restaurantAdminController.getRestaurantAdmin);
     app.get("/api/admin/menu", restaurantAdminController.getRestaurantAdminCategoriesById);

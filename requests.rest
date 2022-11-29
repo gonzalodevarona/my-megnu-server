@@ -84,7 +84,7 @@ Content-Type: application/json
 Authorization: Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzJmYzczM2UzMzkxNzlmNjc3YTQxOCIsInJlc3RhdXJhbnROYW1lIjoiQ2FyYW1iYSIsImlhdCI6MTY2OTYxMTU0MywiZXhwIjoxNjY5NjE1MTQzfQ.7Xnf8LDvdEWcroM00i0Rne8NPp8KWu7qCdTuCpuimk8
 
 {
-    "categoryId":"638592c29784e00857ecd408"
+    "categoryId":"63865bf260ac43fc54f78104"
 }
 
 // Dish ENDPOINTS
