@@ -8,7 +8,7 @@ Content-Type: application/json
     "restaurantName":"Odiseo",
     "nit": "1234", 
     "restaurantType":"Restaurant",
-    "email":"gavo24@hotmail.com",
+    "email":"gavo00@hotmail.com",
     "password":"prueba",
     "menu": []
     
@@ -28,7 +28,7 @@ Content-Type: application/json
 ####
 
 POST http://localhost:3000/api/checkAuth
-Authorization: Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzJmYzczM2UzMzkxNzlmNjc3YTQxOCIsInJlc3RhdXJhbnROYW1lIjoiQ2FyYW1iYSIsImlhdCI6MTY2OTYwMjUyMywiZXhwIjoxNjY5NjA2MTIzfQ.VGSr-IGviwwc9QgoOLueEnUyEjEZxm91jVKV-Meq_5k
+Authorization: Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODU2YjQ2MjNkNTMxMmY2ZTJjMDRhNyIsInJlc3RhdXJhbnROYW1lIjoiQ2FyYW1iYSIsImlhdCI6MTY2OTc2NzAzMCwiZXhwIjoxNjY5NzcwNjMwfQ.z-PNa_sRY0Xw2I06PSbTi8Mb9jrKgHLH9LlkxarFexQ
 
 ###
 
@@ -79,13 +79,11 @@ Authorization: Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzJmYzcz
 }
 
 ###
-GET http://localhost:3000/api/menu/category
+GET http://localhost:3000/api/menu/category/63865d1bcc38b6cf62d563f6
 Content-Type: application/json
 Authorization: Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzJmYzczM2UzMzkxNzlmNjc3YTQxOCIsInJlc3RhdXJhbnROYW1lIjoiQ2FyYW1iYSIsImlhdCI6MTY2OTYxMTU0MywiZXhwIjoxNjY5NjE1MTQzfQ.7Xnf8LDvdEWcroM00i0Rne8NPp8KWu7qCdTuCpuimk8
 
-{
-    "categoryId":"63865d1bcc38b6cf62d563f6"
-}
+
 
 // Dish ENDPOINTS
 
@@ -133,7 +131,7 @@ Authorization: Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzJmYzcz
 
 {
     "categoryId":"6385925245f83736bde8b1fe",
-    "dishId": "63866ae3c1cc6fbbbb8485b0",
+    "dishId": "63869f0a74758d39a4075e21",
     "dish":{
         "name": "melooo",
         "description": "sopitaa",
